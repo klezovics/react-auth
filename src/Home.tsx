@@ -41,7 +41,7 @@ function Home() {
     };
 
     const handleGoogleLogin = () => {
-        const apiBaseUrl = "http://localhost:8080"
+        const apiBaseUrl =  import.meta.env.VITE_API_URL
         window.location.href = apiBaseUrl + "/oauth2/authorization/google"
     }
 
