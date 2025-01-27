@@ -44,9 +44,9 @@ function Home() {
         const apiBaseUrl =  import.meta.env.VITE_API_URL
         console.log("Using base URL:" + apiBaseUrl)
 
-        setTimeout(() => {
+        // setTimeout(() => {
             window.location.href = apiBaseUrl + "/oauth2/authorization/google"
-        }, 10000)
+        // }, 2000)
     }
 
     const handleLogout = () => {
