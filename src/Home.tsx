@@ -42,6 +42,7 @@ function Home() {
 
     const handleGoogleLogin = () => {
         const apiBaseUrl =  import.meta.env.VITE_API_URL
+        console.log("Using base URL:" + apiBaseUrl)
         window.location.href = apiBaseUrl + "/oauth2/authorization/google"
     }
 
