@@ -13,8 +13,10 @@ function UserInfo() {
 
     useEffect(() => {
         const fetchUserData = async () => {
+            const apiBaseUrl =  import.meta.env.VITE_API_URL
+
             try {
-                const response = await fetch("http://localhost:8080/api/user/me/", {
+                const response = await fetch(apiBaseUrl + "/api/user/me/", {
                     method: "GET",
                     headers: {
                         "Authorization": authHeader,
