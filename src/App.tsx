@@ -4,10 +4,12 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import AuthProvider from "react-auth-kit";
 import store from './authStore.js'
-import {BrowserRouter, Link, Route, Routes, useSearchParams} from "react-router-dom";
 import Home from "./Home.tsx";
 import UserInfo from "./UserInfo.tsx";
-import useSignIn from "react-auth-kit/hooks/useSignIn";
+import AuthOutlet from "@auth-kit/react-router/AuthOutlet";
+import {BrowserRouter, NavLink, Route, Routes} from "react-router";
+import RequireAuth from "@auth-kit/react-router/RequireAuth";
+import PrivateRoute from "./PrivateRoute.tsx";
 
 function App() {
     return (
@@ -16,11 +18,13 @@ function App() {
                 <BrowserRouter>
                     <nav>
                         <h1>This is Auth Test</h1>
-                        <Link to="/">Home</Link> | <Link to="/user">About</Link>
+                        <NavLink to="/">Home</NavLink> | <NavLink to="/user">About</NavLink>
                     </nav>
                     <Routes>
                         <Route path="/" element={<Home/>}/>
-                        <Route path="/user" element={<UserInfo/>}/>
+                        <Route element={<PrivateRoute/>}>
+                            <Route path="/user" element={<UserInfo/>}/>
+                        </Route>
                     </Routes>
                 </BrowserRouter>
             </AuthProvider>

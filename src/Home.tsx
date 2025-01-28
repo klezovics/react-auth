@@ -1,11 +1,11 @@
 import {useEffect, useState} from 'react'
 import './App.css'
 import useSignIn from "react-auth-kit/hooks/useSignIn";
-import {useNavigate, useSearchParams} from "react-router-dom";
 import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 import useSignOut from "react-auth-kit/hooks/useSignOut";
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
+import {useNavigate, useSearchParams} from "react-router";
 
 function Home() {
 

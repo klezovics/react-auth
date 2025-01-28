@@ -1,15 +1,14 @@
 import {useEffect, useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import AuthProvider from "react-auth-kit";
-import store from './authStore.js'
 import useAuthHeader from "react-auth-kit/hooks/useAuthHeader";
+import useAuthUser from "react-auth-kit/hooks/useAuthUser";
 
 function UserInfo() {
 
     const authHeader = useAuthHeader();
     const [userData, setUserData] = useState(null);
+    const authUser = useAuthUser();
+    console.log(authUser);
 
     useEffect(() => {
         const fetchUserData = async () => {
